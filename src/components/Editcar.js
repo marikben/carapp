@@ -9,13 +9,13 @@ import DialogTitle from '@material-ui/core/DialogTitle';
 export default function Editcar(props){
     const [open, setOpen] = React.useState(false);
     const [car, setCar] = React.useState({
-        brand: '', model: '', color: '', fuel: '', year: '', price: ''
+        brand: '', model: '', color: '', fuel: '',  price: '', year: ''
     }
     )
     const handleClickOpen = () => {
         console.log(props.car);
         setCar({brand: props.car.brand, model: props.car.model, color: props.car.color, 
-          fuel: props.car.fuel, year: props.car.fuel, price: props.car.price})
+          fuel: props.car.fuel, year: props.car.year, price: props.car.price})
         setOpen(true);
     };
 
@@ -30,7 +30,7 @@ export default function Editcar(props){
     const updateCar = () => {
         props.updateCar(car, props.car._links.car.href);
         handleClose();
-    };
+    }
 
     return (
         <div>
